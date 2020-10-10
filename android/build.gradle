@@ -31,6 +31,12 @@ android {
     compileSdkVersion 28
     buildToolsVersion = '28.0.3'
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs.lite']
+        }
+    }
+
     defaultConfig {
         minSdkVersion 19
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,5 +61,5 @@ dependencies {
     // Google firebase cloud messaging
     implementation 'com.google.android.gms:play-services-base:11.4.0'
     implementation 'com.google.firebase:firebase-messaging:11.4.0'
-    api 'com.hyphenate:hyphenate-sdk:3.7.1'
+    api files('src/main/libs.lite/hyphenatechat_3.7.1.jar')
 }
